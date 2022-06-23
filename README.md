@@ -25,6 +25,8 @@ License specifies the license to insert into your document. Use common abbreviat
 - [MIT](https://opensource.org/licenses/MIT)
 - [Apache 2 || Apache2 || Apache](https://opensource.org/licenses/Apache-2.0)
 - [BSD3 || BSD-3 || bsd3](https://opensource.org/licenses/BSD-3-Clause)
+- [BSD3 || BSD-2 || bsd2](https://opensource.org/licenses/BSD-2-Clause)
+
 
 ### Input (required)
 `$ rz -i sourcecode.ts`
