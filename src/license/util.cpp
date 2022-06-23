@@ -3,6 +3,8 @@
 #include <sstream>
 #include <vector>
 
+namespace fs = std::filesystem;
+
 uint license::current_year()
 {
     std::time_t t = std::time(nullptr);
@@ -77,6 +79,12 @@ void license::add_sufix(std::string &in, const std::string &sufix)
 
 void license::write_out(license::License &license, const std::filesystem::path &infile, const std::filesystem::path &outfile, const std::string &prefix, const std::string &sufix)
 {
+    if (fs::is_directory(infile))
+    {
+        std::cerr << infile << " is a directory. Please specify an individual file" << std::endl;
+        return;
+    }
+    
     std::string out = license.string();
     license::add_prefix(out, prefix);
     license::add_sufix(out, sufix);
