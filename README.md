@@ -37,9 +37,9 @@ Output specifies the file to write your license (plus any input specified with `
 `$ rt -pl "// "`
 Prefix Line specifies what to prefix before each line of your output. Think the specific comment charachters for your source langauge.
 
-### Sufix Line
+### Suffix Line
 `$ rt -sl '-->'`
-Sufix Line specifies what to sufix after each line of your output. Think the closing brackets of a html comment. **Great for markdown!**
+Suffix Line specifies what to Suffix after each line of your output. Think the closing brackets of a html comment. **Great for markdown!**
 
 #### Example
 ```go
