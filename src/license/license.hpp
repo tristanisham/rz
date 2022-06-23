@@ -30,7 +30,7 @@ namespace license
         std::string year;
         std::string text;
 
-        MIT(std::string name = getenv("USER"), std::string year = "");
+        MIT(std::string name = std::getenv("USER"), std::string year = "");
 
         std::string string();
     };
@@ -42,7 +42,7 @@ namespace license
         std::string year;
         std::string text;
 
-        Apache2(std::string name = getenv("USER"), std::string year = "");
+        Apache2(std::string name = std::getenv("USER"), std::string year = "");
         std::string string();
     };
 
