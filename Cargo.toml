@@ -1,11 +1,11 @@
 [package]
-name = "rt"
+name = "rz"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
 description = "rt is a command line utility to add license text to your source code files so you can focus on production."
 authors = ["Tristan Isham"]
-repository = "https://github.com/tristanisham/rt"
+repository = "https://github.com/tristanisham/rz"
 keywords = ["cli", "devtools", "copyright", "license"]
 categories = ["development-tools", "command-line-utilities"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
