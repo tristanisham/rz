@@ -5,7 +5,7 @@
 
 namespace license
 {
-    uint current_year();
+    unsigned int current_year();
     std::string current_year_string();
 
     class License

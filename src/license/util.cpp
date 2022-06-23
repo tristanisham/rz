@@ -5,7 +5,7 @@
 
 namespace fs = std::filesystem;
 
-uint license::current_year()
+unsigned int license::current_year()
 {
     std::time_t t = std::time(nullptr);
     std::tm *const pTInfo = std::localtime(&t);
@@ -84,7 +84,7 @@ void license::write_out(license::License &license, const std::filesystem::path &
         std::cerr << infile << " is a directory. Please specify an individual file" << std::endl;
         return;
     }
-    
+
     std::string out = license.string();
     license::add_prefix(out, prefix);
     license::add_sufix(out, sufix);
