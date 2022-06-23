@@ -22,6 +22,9 @@ Year specifies the year as it should appear in the license. If **year** is not s
 `$ rt -l MIT`
 License specifies the license to insert into your document. Use common abbreviations like **MIT** or **Apache2**.
 
+- [MIT](https://opensource.org/licenses/MIT)
+- [Apache 2 || Apache2 || Apache](https://opensource.org/licenses/Apache-2.0)
+
 ### Input (required)
 `$ rt -i sourcecode.ts`
 Input specifies the file to prepend your license onto. It's good if you already have your code, and just want to add a license before.

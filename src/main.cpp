@@ -26,7 +26,6 @@ int main(int argc, char const *argv[])
 
         if (arg == "help" || arg == "-h")
         {
-            
         }
         else if (arg == "-n" && bigger)
         {
@@ -71,6 +70,19 @@ int main(int argc, char const *argv[])
     if (license == "MIT")
     {
         auto copy = license::MIT{name, year};
+        try
+        {
+            license::write_out(copy, infile, outfile, prefix, sufix);
+        }
+        catch (std::string err)
+        {
+            std::cerr << err << std::endl;
+            return 1;
+        }
+    }
+    else if (license == "Apache2" || license == "Apache 2" || license == "Apache")
+    {
+        auto copy = license::Apache2{name, year};
         try
         {
             license::write_out(copy, infile, outfile, prefix, sufix);

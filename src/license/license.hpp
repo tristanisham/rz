@@ -16,8 +16,6 @@ namespace license
 
     public:
         virtual std::string string();
-
-        
     };
 
     void add_prefix(std::string &in, const std::string &prefix);
@@ -34,6 +32,17 @@ namespace license
 
         MIT(std::string name = getenv("USER"), std::string year = "");
 
+        std::string string();
+    };
+
+    class Apache2 : public License
+    {
+    public:
+        std::string name;
+        std::string year;
+        std::string text;
+
+        Apache2(std::string name = getenv("USER"), std::string year = "");
         std::string string();
     };
 
