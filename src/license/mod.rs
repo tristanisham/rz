@@ -133,6 +133,48 @@ impl License for BSD3 {
     }
 }
 
+pub struct BSD2 {
+    pub name: String,
+    pub year: String,
+    pub text: String,
+}
+
+impl BSD2 {
+    pub fn new(name: Option<String>, year: Option<String>) -> Self {
+        let name = match name {
+            Some(val) => val,
+            None => match env::var("USER") {
+                Ok(v) => v,
+                Err(_) => String::from(""),
+            },
+        };
+        let year = match year {
+            Some(y) => y,
+            None => Utc::now().year().to_string(),
+        };
+
+        let text: String = format!("Copyright {year} {name}
+
+        Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+        1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+        
+        2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."        
+        );
+
+        Self { name, year, text }
+    }
+}
+
+impl License for BSD2 {
+    fn string(self) -> String {
+        return self.text;
+    }
+}
+
+
 pub fn write_out<P: AsRef<Path>>(
     license: impl License,
     infile: P,

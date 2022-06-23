@@ -1,6 +1,6 @@
 use std::env;
 
-use license::{MIT, Apache2, BSD3};
+use license::{MIT, Apache2, BSD3, BSD2};
 mod license;
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -57,6 +57,10 @@ fn main() {
         },
         "BSD3" | "BSD-3" | "bsd3" => {
             let copy = BSD3::new(name, year);
+            license::write_out(copy, infile, outfile, prefix, suffix).unwrap();
+        },
+        "BSD2" | "BSD-2" | "bsd2" => {
+            let copy = BSD2::new(name, year);
             license::write_out(copy, infile, outfile, prefix, suffix).unwrap();
         }
         _ => eprintln!("no license specified. Example: $ rz -l MIT"),
