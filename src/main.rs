@@ -1,6 +1,6 @@
 use std::env;
 
-use license::{MIT, Apache2};
+use license::{MIT, Apache2, BSD3};
 mod license;
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -47,14 +47,18 @@ fn main() {
     }
 
     match license.as_str() {
-        "MIT" => {
+        "MIT" | "mit" => {
             let copy = MIT::new(name, year);
             license::write_out(copy, infile, outfile, prefix, suffix).unwrap();
         },
         "Apache" | "Apache2" | "Apache2.0" | "apache" => {
             let copy = Apache2::new(name, year);
             license::write_out(copy, infile, outfile, prefix, suffix).unwrap();
+        },
+        "BSD3" | "BSD-3" | "bsd3" => {
+            let copy = BSD3::new(name, year);
+            license::write_out(copy, infile, outfile, prefix, suffix).unwrap();
         }
-        _ => (),
+        _ => eprintln!("no license specified. Example: $ rz -l MIT"),
     }
 }

@@ -11,34 +11,34 @@
 ## Commands
 
 ### Name
-`$ rt -n yourname`
+`$ rz -n yourname`
 Name specifies your name as it should appear in the license. If **name** is not specified, it'll insert the $USER environment variable.
 
 ### Year
-`$ rt -y 2022`
+`$ rz -y 2022`
 Year specifies the year as it should appear in the license. If **year** is not specified, it'll insert the current year.
 
 ### License
-`$ rt -l MIT`
+`$ rz -l MIT`
 License specifies the license to insert into your document. Use common abbreviations like **MIT** or **Apache2**.
 
 - [MIT](https://opensource.org/licenses/MIT)
 - [Apache 2 || Apache2 || Apache](https://opensource.org/licenses/Apache-2.0)
 
 ### Input (required)
-`$ rt -i sourcecode.ts`
+`$ rz -i sourcecode.ts`
 Input specifies the file to prepend your license onto. It's good if you already have your code, and just want to add a license before.
 
 ### Output
-`$ rt -i sourcecode.ts -o newsourcecode.ts`
+`$ rz -i sourcecode.ts -o newsourcecode.ts`
 Output specifies the file to write your license (plus any input specified with `-i`) to. If not provided it just assumes you want to replace your input with your output.
 
 ### Prefix Line
-`$ rt -pl "// "`
+`$ rz -pl "// "`
 Prefix Line specifies what to prefix before each line of your output. Think the specific comment charachters for your source langauge.
 
 ### Suffix Line
-`$ rt -sl '-->'`
+`$ rz -sl '-->'`
 Suffix Line specifies what to Suffix after each line of your output. Think the closing brackets of a html comment. **Great for markdown!**
 
 #### Example
@@ -53,7 +53,7 @@ func main() {
 }
 ```
 ```sh
-$ rt -i main.go -pl "// " -l MIT -n "Your Name"
+$ rz -i main.go -pl "// " -l MIT -n "Your Name"
 ```
 ```go
 // Copyright ©2022 Your Name
