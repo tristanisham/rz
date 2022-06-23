@@ -1,6 +1,6 @@
 <div align="center">
 ©
-  <h1>rt</h1>
+  <h1>rz</h1>
 
   <strong>A command line tool for adding license text to your source files so you can focus on production</strong>
 
