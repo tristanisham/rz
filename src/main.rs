@@ -63,6 +63,6 @@ fn main() {
             let copy = BSD2::new(name, year);
             license::write_out(copy, infile, outfile, prefix, suffix).unwrap();
         }
-        _ => eprintln!("no license specified. Example: $ rz -l MIT"),
+        _ => eprintln!("No license specified. Example: $ rz -l MIT"),
     }
 }
