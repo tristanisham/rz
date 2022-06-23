@@ -24,7 +24,11 @@ int main(int argc, char const *argv[])
             bigger = true;
         }
 
-        if (arg == "-n" && bigger)
+        if (arg == "help" || arg == "-h")
+        {
+            
+        }
+        else if (arg == "-n" && bigger)
         {
             name = std::string{argv[i + 1]};
         }
@@ -43,10 +47,14 @@ int main(int argc, char const *argv[])
         else if (arg == "-o" && bigger)
         {
             outfile = std::string{argv[i + 1]};
-        } else if (arg == "-pl" && bigger) {
-            prefix = std::string{argv[i+1]};
-        } else if (arg == "-sl" && bigger) {
-            sufix = std::string{argv[i+1]};
+        }
+        else if (arg == "-pl" && bigger)
+        {
+            prefix = std::string{argv[i + 1]};
+        }
+        else if (arg == "-sl" && bigger)
+        {
+            sufix = std::string{argv[i + 1]};
         }
     }
 
@@ -54,7 +62,9 @@ int main(int argc, char const *argv[])
     {
         std::cerr << "rt requires an input file (use -i <./filepath>)" << std::endl;
         return 1;
-    } else if (outfile.empty()) {
+    }
+    else if (outfile.empty())
+    {
         outfile = infile;
     }
 
