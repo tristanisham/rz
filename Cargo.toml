@@ -1,9 +1,9 @@
 [package]
 name = "rz"
-version = "0.1.5"
+version = "0.1.6"
 edition = "2021"
 license = "MIT"
-description = "rt is a command line utility to add license text to your source code files so you can focus on production."
+description = "rz is a command line utility to add license text to your source code files so you can focus on production."
 authors = ["Tristan Isham"]
 repository = "https://github.com/tristanisham/rz"
 keywords = ["cli", "devtools", "copyright", "license"]
